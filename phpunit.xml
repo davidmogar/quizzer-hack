@@ -1,5 +1,4 @@
 <phpunit backupGlobals="true">
     <testsuite>
-        <directory>./tests</directory>
-    </testsuite>
+        <directory suffix='.hh'>./tests</directory>
 </phpunit>
