@@ -1,6 +1,6 @@
 #Quizzer
 
-[![Build Status](https://magnum.travis-ci.com/davidmogar/quizzer-php.svg?token=wmck5BREt8bmqUpsNF4v)](https://magnum.travis-ci.com/davidmogar/quizzer-php)
+[![Build Status](https://magnum.travis-ci.com/davidmogar/quizzer-hack.svg?token=wmck5BREt8bmqUpsNF4v&branch=master)](https://magnum.travis-ci.com/davidmogar/quizzer-hack)
 
 This is the Hack version of Quizzer, a simple application to parse JSON files with questons and answers of students to these questions to genereate and/or validate grades for all the students.
 
