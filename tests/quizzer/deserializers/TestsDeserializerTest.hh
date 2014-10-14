@@ -1,6 +1,6 @@
 <?hh
 
-require_once 'quizzer/deserializers/TestDeserializer.hh';
+require_once 'quizzer/deserializers/TestsDeserializer.hh';
 
 class TestsDeserializerTest extends PHPUnit_Framework_TestCase
 {
