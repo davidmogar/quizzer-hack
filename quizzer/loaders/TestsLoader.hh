@@ -2,9 +2,9 @@
 
 require_once 'quizzer/deserializers/TestsDeserializer.hh';
 
-class TestsLoader
-{
-    public static function loadTests($testsUrl) {
+class TestsLoader {
+
+    public static function loadTests(string $testsUrl): array {
         if (empty($testsUrl)) {
             throw new Exception('Tests URL cannot be null');
         }

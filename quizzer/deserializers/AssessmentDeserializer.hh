@@ -7,7 +7,7 @@ require_once 'quizzer/domain/questions/TrueFalseQuestion.hh';
 
 class AssessmentDeserializer {
 
-    public static function deserializeAnswers($json) {
+    public static function deserializeAnswers(string $json): array {
         $data = json_decode($json);
         $answers = array();
 
@@ -30,7 +30,7 @@ class AssessmentDeserializer {
         return $answers;
     }
 
-    public static function deserializeGrades($json) {
+    public static function deserializeGrades(string $json): array {
         $data = json_decode($json);
         $grades = array();
 
@@ -45,7 +45,7 @@ class AssessmentDeserializer {
         return $grades;
     }
 
-    public static function deserializeQuestions($json) {
+    public static function deserializeQuestions(string $json): array {
         $data = json_decode($json);
         $questions = array();
 
@@ -72,7 +72,7 @@ class AssessmentDeserializer {
         return $questions;
     }
 
-    private static function createMultichoiceQuestion($question) {
+    private static function createMultichoiceQuestion(mixed $question): MultichoiceQuestion {
         $multichoice = null;
 
         if (isset($question->alternatives)) {
@@ -87,7 +87,7 @@ class AssessmentDeserializer {
         return $multichoice;
     }
 
-    private static function createNumericalQuestion($question) {
+    private static function createNumericalQuestion(mixed $question): NumericalQuestion {
         $numerical = null;
 
         if (isset($question->correct) && isset($question->valueOK) && isset($question->valueFailed)) {
@@ -101,7 +101,7 @@ class AssessmentDeserializer {
         return $numerical;
     }
 
-    private static function createTrueFalseQuestion($question) {
+    private static function createTrueFalseQuestion(mixed $question): TrueFalseQuestion {
         $truefalse = null;
 
         if (isset($question->correct) && isset($question->valueOK) && isset($question->valueFailed)

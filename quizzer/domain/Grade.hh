@@ -1,33 +1,28 @@
 <?hh
 
-class Grade
-{
+class Grade {
+  
     private $studentId;
     private $grade;
 
-    public function __construct($studentId, $grade)
-    {
+    public function __construct(int $studentId, float $grade) {
         $this->grade = $grade;
         $this->studentId = $studentId;
     }
 
-    public function getGrade()
-    {
+    public function getGrade(): float {
         return $this->grade;
     }
 
-    public function setGrade($grade)
-    {
+    public function setGrade(float $grade) {
         $this->grade = $grade;
     }
 
-    public function getStudentId()
-    {
+    public function getStudentId():int {
         return $this->studentId;
     }
 
-    public function setStudentId($studentId)
-    {
+    public function setStudentId(int $studentId) {
         $this->studentId = $studentId;
     }
 }

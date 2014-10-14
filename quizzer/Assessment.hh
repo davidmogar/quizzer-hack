@@ -1,20 +1,18 @@
 <?hh
 
-class Assessment
-{
+class Assessment {
+  
     private $questions;
     private $answers;
     private $grades;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->questions = array();
         $this->answers = array();
         $this->grades = array();
     }
 
-    public function calculateGrades()
-    {
+    public function calculateGrades() {
         $this->grades = array();
 
         foreach ($this->answers as $key => $value) {
@@ -22,9 +20,8 @@ class Assessment
         }
     }
 
-    public function calculateStudentGrade($studentId)
-    {
-        $grade = 0;
+    public function calculateStudentGrade(int $studentId): float {
+        $grade = 0.0;
 
         if (isset($this->answers[$studentId])) {
             foreach ($this->answers[$studentId] as $answer) {
@@ -39,8 +36,7 @@ class Assessment
         return $grade;
     }
 
-    public function getStatistics()
-    {
+    public function getStatistics(): array {
         $statistics = array();
 
         foreach ($this->answers as $key => $value) {
@@ -62,8 +58,7 @@ class Assessment
         return $statistics;
     }
 
-    public function validateGrade(Grade $grade)
-    {
+    public function validateGrade(Grade $grade): bool {
         $valid = false;
 
         if (!empty($grade)) {
@@ -73,8 +68,7 @@ class Assessment
         return $valid;
     }
 
-    public function validateGrades()
-    {
+    public function validateGrades(): bool {
         $valid = true;
 
         foreach ($this->grades as $key => $value) {
@@ -86,37 +80,31 @@ class Assessment
         return $valid;
     }
 
-    public function getQuestions()
-    {
+    public function getQuestions(): array {
         return $this->questions;
     }
 
-    public function setQuestions($questions)
-    {
+    public function setQuestions(array $questions) {
         if (is_array($questions)) {
             $this->questions = $questions;
         }
     }
 
-    public function getAnswers()
-    {
+    public function getAnswers(): array {
         return $this->answers;
     }
 
-    public function setAnswers($answers)
-    {
+    public function setAnswers(array $answers) {
         if (is_array($answers)) {
             $this->answers = $answers;
         }
     }
 
-    public function getGrades()
-    {
+    public function getGrades(): array {
         return $this->grades;
     }
 
-    public function setGrades($grades)
-    {
+    public function setGrades(array $grades) {
         if (is_array($grades)) {
             $this->grades = $grades;
         }

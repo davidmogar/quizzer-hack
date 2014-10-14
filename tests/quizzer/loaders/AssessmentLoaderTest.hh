@@ -15,10 +15,9 @@ class AssessmentLoaderTest extends PHPUnit_Framework_TestCase {
 
         try {
             AssessmentLoader::loadAssessmentFromUrls(self::$questionsUrl, self::$answersUrl, self::$gradesUrl);
-            AssessmentLoader::loadAssessmentFromUrls(self::$questionsUrl, self::$answersUrl, null);
+            AssessmentLoader::loadAssessmentFromUrls(self::$questionsUrl, self::$answersUrl, "");
         } catch(Exception $e) {
             $this->fail('Exception not expected');
         }
     }
 }
- 

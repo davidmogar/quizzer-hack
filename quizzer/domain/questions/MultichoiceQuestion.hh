@@ -1,25 +1,22 @@
-<?php
+<?hh
 
 require_once 'Question.hh';
 
-class MultichoiceQuestion extends Question
-{
+class MultichoiceQuestion extends Question {
+
     private $alternatives;
 
-    function __construct($id, $text)
-    {
+    function __construct(int $id, string $text) {
         parent::__construct($id, $text);
 
         $this->alternatives = array();
     }
 
-    function addAlternative($id, $text, $value)
-    {
+    function addAlternative(int $id, string $text, mixed $value) {
         $this->alternatives[$id] = new Alternative($id, $text, $value);
     }
 
-    public function getScore(Answer $answer)
-    {
+    public function getScore(Answer $answer): float {
         $score = 0;
 
         if (!empty($answer)) {
@@ -30,18 +27,16 @@ class MultichoiceQuestion extends Question
             }
         }
 
-        return $score;
+        return (float) $score;
     }
 }
 
-class Alternative
-{
+class Alternative {
     var $id;
     var $text;
     var $value;
 
-    function __construct($id, $text, $value)
-    {
+    function __construct(int $id, string $text, mixed $value) {
         $this->id = $id;
         $this->text = $text;
         $this->value = $value;

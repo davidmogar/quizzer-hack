@@ -2,9 +2,9 @@
 
 require_once 'quizzer/domain/Test.hh';
 
-class TestsDeserializer
-{
-    public static function deserialize($json) {
+class TestsDeserializer {
+  
+    public static function deserialize(string $json): array {
         $data = json_decode($json);
         $tests = array();
 

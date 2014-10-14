@@ -2,20 +2,17 @@
 
 require_once 'Question.hh';
 
-class TrueFalseQuestion extends Question
-{
+class TrueFalseQuestion extends Question {
     private $correct;
     private $feedback;
     private $valueCorrect;
     private $valueIncorrect;
 
-    public function __construct($id, $text)
-    {
+    public function __construct(int $id, string $text) {
         parent::__construct($id, $text);
     }
 
-    public function getScore(Answer $answer)
-    {
+    public function getScore(Answer $answer): float {
         $score = 0;
 
         if (!empty($answer)) {
@@ -26,46 +23,38 @@ class TrueFalseQuestion extends Question
             }
         }
 
-        return $score;
+        return (float) $score;
     }
 
-    public function getCorrect()
-    {
+    public function getCorrect(): bool {
         return $this->correct;
     }
 
-    public function setCorrect($correct)
-    {
+    public function setCorrect(bool $correct) {
         $this->correct = $correct;
     }
 
-    public function getFeedback()
-    {
+    public function getFeedback(): string {
         return $this->feedback;
     }
 
-    public function setFeedback($feedback)
-    {
+    public function setFeedback(string $feedback) {
         $this->feedback = $feedback;
     }
 
-    public function getValueCorrect()
-    {
+    public function getValueCorrect(): mixed {
         return $this->valueCorrect;
     }
 
-    public function setValueCorrect($valueCorrect)
-    {
+    public function setValueCorrect(mixed $valueCorrect) {
         $this->valueCorrect = $valueCorrect;
     }
 
-    public function getValueIncorrect()
-    {
+    public function getValueIncorrect(): mixed {
         return $this->valueIncorrect;
     }
 
-    public function setValueIncorrect($valueIncorrect)
-    {
+    public function setValueIncorrect(mixed $valueIncorrect) {
         $this->valueIncorrect = $valueIncorrect;
     }
 }

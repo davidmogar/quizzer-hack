@@ -1,9 +1,8 @@
 <?hh
 
-class AssessmentJsonSerializer
-{
-    public static function serializeGrades($grades)
-    {
+class AssessmentJsonSerializer {
+  
+    public static function serializeGrades(array $grades): string {
         $scores = array();
 
         foreach ($grades as $studentId => $grade) {
@@ -17,8 +16,7 @@ class AssessmentJsonSerializer
         return '{"scores": ' . json_encode($scores, JSON_PRETTY_PRINT) . '}';
     }
 
-    public static function serializeStatistics($statistics)
-    {
+    public static function serializeStatistics(array $statistics): string {
         $items = array();
 
         foreach ($statistics as $questionId => $value) {

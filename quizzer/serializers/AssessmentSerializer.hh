@@ -3,11 +3,10 @@
 require_once "quizzer/serializers/AssessmentJsonSerializer.hh";
 require_once "quizzer/serializers/AssessmentXmlSerializer.hh";
 
-class AssessmentSerializer
-{
-    public static function serializeGrades($grades, $format)
-    {
-        $result = null;
+class AssessmentSerializer {
+  
+    public static function serializeGrades(array $grades, string $format): string {
+        $result = "";
 
         switch (strtolower($format)) {
             case 'xml':
@@ -20,9 +19,8 @@ class AssessmentSerializer
         return $result;
     }
 
-    public static function serializeStatistics($statistics, $format)
-    {
-        $result = null;
+    public static function serializeStatistics(array $statistics, string $format): string {
+        $result = "";
 
         switch (strtolower($format)) {
             case 'xml':

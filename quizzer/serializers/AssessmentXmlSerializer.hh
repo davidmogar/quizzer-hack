@@ -1,9 +1,8 @@
 <?hh
 
-class AssessmentXmlSerializer
-{
-    public static function serializeGrades($grades)
-    {
+class AssessmentXmlSerializer {
+  
+    public static function serializeGrades(array $grades): string {
         $result = "<scores>\n";
 
         foreach ($grades as $studentId => $grade) {
@@ -14,8 +13,7 @@ class AssessmentXmlSerializer
         return $result . "</scores>";
     }
 
-    public static function serializeStatistics($statistics)
-    {
+    public static function serializeStatistics(array $statistics): string {
         $result = "<statistics>\n";
 
         foreach ($statistics as $questionId => $value) {

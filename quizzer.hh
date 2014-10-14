@@ -20,12 +20,11 @@ if (php_sapi_name() != 'cli') {
     }
 }
 
-function calculateGrades($questionsUrl, $answersUrl)
-{
+function calculateGrades(string $questionsUrl, string $answersUrl): Assessment {
     $assessment = null;
 
     try {
-        $assessment = AssessmentLoader::loadAssessmentFromUrls($questionsUrl, $answersUrl, null);
+        $assessment = AssessmentLoader::loadAssessmentFromUrls($questionsUrl, $answersUrl, "");
         $assessment->calculateGrades();
     } catch (Exception $e) {
         // Return default value
@@ -34,15 +33,14 @@ function calculateGrades($questionsUrl, $answersUrl)
     return $assessment;
 }
 
-function parseArguments()
-{
+function parseArguments() {
     $options = getopt("q:a:o:t:sh");
 
     if (isset($options['h'])) {
         showHelp();
     } else if (isset($options['t'])) {
         $valid = validateAssessments($options['t']);
-        echo $valid? 'All tests OK' : 'Tests failed';
+        echo $valid? "All tests OK\n" : "Tests failed\n";
     } else if (isset($options['q']) && isset($options['a'])) {
         $assessment = calculateGrades($options['q'], $options['a']);
 
@@ -59,13 +57,12 @@ function parseArguments()
     }
 }
 
-function showGrades($grades, $format) {
+function showGrades(array $grades, string $format) {
     echo "Assessment's grades:\n";
     echo AssessmentSerializer::serializeGrades($grades, $format) . "\n\n";
 }
 
-function showHelp()
-{
+function showHelp() {
     echo "usage: quizzer [options]\n";
     echo " -a <arg>   URL to the answers file\n";
     echo " -h         Show this help\n";
@@ -75,13 +72,12 @@ function showHelp()
     echo " -t <arg>   Validate assessments in tests file\n";
 }
 
-function showStatistics($statistics, $format) {
+function showStatistics(array $statistics, string $format) {
     echo "Assessment's statistics:\n";
     echo AssessmentSerializer::serializeStatistics($statistics, $format) . "\n\n";
 }
 
-function validateAssessments($url)
-{
+function validateAssessments(string $url): bool {
     $valid = true;
 
     foreach (TestsLoader::loadTests($url) as $test) {
