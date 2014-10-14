@@ -4,7 +4,7 @@ require_once 'quizzer/Assessment.hh';
 require_once 'quizzer/deserializers/AssessmentDeserializer.hh';
 
 class AssessmentLoader {
-  
+
     public static function loadAssessmentFromUrls(string $questionsUrl,
             string $answersUrl, ?string $gradesUrl): Assessment {
         if (!isset($questionsUrl) || !isset($answersUrl)) {
@@ -15,7 +15,7 @@ class AssessmentLoader {
         $answersJson = file_get_contents($answersUrl);
 
         $gradesJson = null;
-        if (!isset($gradesUrl)) {
+        if (!empty($gradesUrl)) {
             $gradesJson = file_get_contents($gradesUrl);
         }
 
