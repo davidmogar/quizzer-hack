@@ -1,11 +1,11 @@
 <?hh
 
-require_once 'quizzer/Assessment.php';
-require_once 'quizzer/domain/Answer.php';
-require_once 'quizzer/domain/Grade.php';
-require_once 'quizzer/domain/questions/MultichoiceQuestion.php';
-require_once 'quizzer/domain/questions/NumericalQuestion.php';
-require_once 'quizzer/domain/questions/TrueFalseQuestion.php';
+require_once 'quizzer/Assessment.hh';
+require_once 'quizzer/domain/Answer.hh';
+require_once 'quizzer/domain/Grade.hh';
+require_once 'quizzer/domain/questions/MultichoiceQuestion.hh';
+require_once 'quizzer/domain/questions/NumericalQuestion.hh';
+require_once 'quizzer/domain/questions/TrueFalseQuestion.hh';
 
 class AssessmentTest extends PHPUnit_Framework_TestCase
 {
