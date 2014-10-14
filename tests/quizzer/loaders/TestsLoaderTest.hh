@@ -1,6 +1,6 @@
 <?hh
 
-require_once 'quizzer/loaders/TestsLoader.php';
+require_once 'quizzer/loaders/TestsLoader.hh';
 
 class TestsLoaderTest extends PHPUnit_Framework_TestCase
 {
