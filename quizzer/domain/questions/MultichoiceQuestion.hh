@@ -16,7 +16,7 @@ class MultichoiceQuestion extends Question {
         $this->alternatives[$id] = new Alternative($id, $text, $value);
     }
 
-    public function getScore(Answer $answer): float {
+    <<Override>> public function getScore(Answer $answer): float {
         $score = 0;
 
         if (!empty($answer)) {

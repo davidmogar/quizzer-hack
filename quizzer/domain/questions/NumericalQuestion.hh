@@ -11,7 +11,7 @@ class NumericalQuestion extends Question {
         parent::__construct($id, $text);
     }
 
-    public function getScore(Answer $answer): float {
+    <<Override>> public function getScore(Answer $answer): float {
         $score = 0;
 
         if (!empty($answer)) {
