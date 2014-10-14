@@ -1,6 +1,6 @@
 <?hh
 
-require_once 'quizzer/deserializers/AssessmentDeserializer.php';
+require_once 'quizzer/deserializers/AssessmentDeserializer.hh';
 
 class AssessmentDeserializerTest extends \PHPUnit_Framework_TestCase
 {
