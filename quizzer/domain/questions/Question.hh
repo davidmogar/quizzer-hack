@@ -11,6 +11,12 @@ abstract class Question {
         $this->text = $text;
     }
 
+    /**
+     * Calculates the score obtained by an student given its answer
+     *
+     * @param Answer $answer answer of the student to this question
+     * @return mixed calculated score
+     */
     abstract public function getScore(Answer $answer): float;
 
     public function getId(): int {

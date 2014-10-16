@@ -1,7 +1,7 @@
 <?hh
 
 class Assessment {
-  
+
     private $questions;
     private $answers;
     private $grades;
@@ -12,6 +12,9 @@ class Assessment {
         $this->grades = array();
     }
 
+    /**
+     * Calculate the grades of this assessment.
+     */
     public function calculateGrades() {
         $this->grades = array();
 
@@ -20,6 +23,12 @@ class Assessment {
         }
     }
 
+    /**
+     * Calculates the grade of a given student.
+     *
+     * @param $studentId id of the student
+     * @return double calculated grade of the student
+     */
     public function calculateStudentGrade(int $studentId): float {
         $grade = 0.0;
 
@@ -36,6 +45,11 @@ class Assessment {
         return $grade;
     }
 
+    /**
+     * Returns an array mapping each question id with the number of correct answers of that question.
+     *
+     * @return array an array with the questions' statistics
+     */
     public function getStatistics(): array {
         $statistics = array();
 
@@ -58,6 +72,13 @@ class Assessment {
         return $statistics;
     }
 
+    /**
+     * Validates the grade received as argument, checking that the value stored correspond to the grade obtained by
+     * the student.
+     *
+     * @param Grade $grade grade to validate
+     * @return bool true if the grade is valid, false otherwise
+     */
     public function validateGrade(Grade $grade): bool {
         $valid = false;
 
@@ -68,6 +89,12 @@ class Assessment {
         return $valid;
     }
 
+    /**
+     * Validate all the grades of this assessment, checking that all the values stored in each grade correspond to
+     * the actual grade obtained by the students.
+     *
+     * @return bool true if all the grades are valid, false otherwise
+     */
     public function validateGrades(): bool {
         $valid = true;
 
