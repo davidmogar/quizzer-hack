@@ -2,7 +2,7 @@
 
 [![Build Status](https://magnum.travis-ci.com/davidmogar/quizzer-hack.svg?token=wmck5BREt8bmqUpsNF4v&branch=master)](https://magnum.travis-ci.com/davidmogar/quizzer-hack)
 
-This is the Hack version of Quizzer, a simple application to parse JSON files with questons and answers of students to these questions to genereate and/or validate grades for all the students.
+This is the Hack version of Quizzer, a simple application to parse JSON files with questions and answers of students to these questions to genereate and/or validate grades for all the students.
 
 ##Usage
 
@@ -15,6 +15,9 @@ Quizzer is a command line application and can be executed with the next options:
 - `-t <arg>`: Validate assessments in a tests file.
 
 As an example, the arguments `-q questions.json -a answers.json -o xml -s` will generate grades and statistics for the given assessment data and will show the result as xml files in the standard output.
+
+###Dependencies
+Quizzer require the HHVM virtual machine and a web server configured with FastCGI.
 
 ##Web service
 
