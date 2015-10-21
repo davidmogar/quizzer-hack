@@ -23,7 +23,7 @@ Quizzer require the HHVM virtual machine and a web server configured with FastCG
 
 Along with the the app there is a webpage (index.html) that contains a form that can be used to generate grades. The input is sent to quizzer.hh to retrieve the result.
 
-![Quizzer](http://davidmogar.com/uploads/github/quizzer.png)
+![Quizzer](http://davidmogar.leakedbits.com/uploads/github/quizzer.png)
 
 To run this code it is neccessary to have installed HHVM and configure Apache to use FastCGI, sending all requests to Hack files to HHVM.
 
